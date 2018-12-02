@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cermati Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+        <span id="icon"><img src="assets/icons/crown.png" alt=""></span>
+        <span>Mau diskon belanja up to 70%?</span>
+        <input type="text" placeholder="Masukan email kamu disini" id="txtBanner" />
+        <button id="btnBanner">DAFTAR</button>
+    </div>
+
+    <section id="section1">
+        <img src="assets/images/phone.png" alt="phone" id="img1" />
+        <span id="tulisanSection1">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis iusto temporibus quod laborum qui quo maiores. Nulla provident dignissimos explicabo nemo molestiae similique, excepturi doloribus. Est repellat minima repudiandae corrupti.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsum quos nihil ab amet, id officiis odio libero mollitia quae aperiam inventore quidem debitis repudiandae maiores minus necessitatibus cumque saepe.</p>
+            <button id="btnSection1">Daftar sekarang juga</button>
+        </span>
+    </section>
+    <section id="section2" class="threeColoumn">
+            <span class="left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit incidunt itaque tempora reiciendis dolorem accusamus ut eum cum inventore doloribus repudiandae magnam, nemo error veniam, laborum necessitatibus. Molestias, harum! Architecto!
+            </span>
+            <span class="center">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, velit sed! Aliquid fugiat debitis ea commodi doloribus voluptas asperiores officiis doloremque atque ex nemo, voluptates dolore cumque dolorem quaerat quo!
+            </span>
+            <span class="right">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia doloremque, voluptatem pariatur quasi facere deserunt maxime officiis itaque laborum praesentium odit quisquam necessitatibus? Adipisci soluta tenetur dignissimos ipsum sint.
+            </span>
+    </section>
+    <section id="section3" class="threeColoumn">
+            <span class="left">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit incidunt itaque tempora reiciendis dolorem accusamus ut eum cum inventore doloribus repudiandae magnam, nemo error veniam, laborum necessitatibus. Molestias, harum! Architecto!
+                </span>
+                <span class="center">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, velit sed! Aliquid fugiat debitis ea commodi doloribus voluptas asperiores officiis doloremque atque ex nemo, voluptates dolore cumque dolorem quaerat quo!
+                </span>
+                <span class="right">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia doloremque, voluptatem pariatur quasi facere deserunt maxime officiis itaque laborum praesentium odit quisquam necessitatibus? Adipisci soluta tenetur dignissimos ipsum sint.
+                </span>
+    </section>
+    <section id="section4" class="threeColoumn">
+            <span class="left">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit incidunt itaque tempora reiciendis dolorem accusamus ut eum cum inventore doloribus repudiandae magnam, nemo error veniam, laborum necessitatibus. Molestias, harum! Architecto!
+                </span>
+                <span class="center">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, velit sed! Aliquid fugiat debitis ea commodi doloribus voluptas asperiores officiis doloremque atque ex nemo, voluptates dolore cumque dolorem quaerat quo!
+                </span>
+                <span class="right">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit quia doloremque, voluptatem pariatur quasi facere deserunt maxime officiis itaque laborum praesentium odit quisquam necessitatibus? Adipisci soluta tenetur dignissimos ipsum sint.
+                </span>
+    </section>
+
+    <div id="popup1">
+        <div class="popup">
+            <div onclick="closeModal()" class="close"></div>
+            <h3>Belanja Gak Pakai Pusing!</h3>
+            <p>
+                Yuk daftarin emailmu untuk melihat pilihan barang-barang fashion MURAH dan TERKINI dari ribuan toko online terpercaya langsung ke email kamu
+            </p>
+            <div>
+                <input type="text" id="txtModal" placeholder="Masukan email kamu disini" />
+            </div>
+            <div>
+                <button id="btnModal">DAFTARKAN SEKARANG</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        var popup1 = document.getElementById("popup1")
+        var closeStatus = false
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+
+            if (window.scrollY >= document.body.offsetHeight / 3 && closeStatus === false) {
+                popup1.style.visibility = "visible"
+            }
+            else {
+                popup1.style.visibility = "hidden"
+            }
+        }
+
+        function closeModal() {
+            popup1.style.visibility = "hidden"
+            closeStatus = true
+
+            //slider aktif kembali setelah 10 menit
+            setInterval(function() {
+                if (closeStatus === true) {
+                    closeStatus = false
+                }
+            }, 600000)
+        }
+
+    </script>
+</body>
+</html>
