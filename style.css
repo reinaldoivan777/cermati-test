@@ -172,9 +172,22 @@ body {
   .threeColoumn span {
     width: 30%;
     position: absolute;
-    margin-top: 15%;
+    margin-top: 6%;
     color: #ffffff;
     text-align: center;
+  }
+
+  .threeColoumn {
+    /* width: 500px; */
+    margin: 0 auto;
+  }
+
+  .threeColoumn span#test {
+    -moz-columns: 3;
+    -webkit-columns: 3;
+    columns: 3;
+    column-gap: 100%;
+    margin-left: 14%; 
   }
 
   .center {
